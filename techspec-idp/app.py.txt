@@ -1,0 +1,22 @@
+from fastapi import FastAPI, UploadFile
+import json
+from extractor import extract_document
+
+app = FastAPI()
+
+@app.post("/extract")
+async def extract(file: UploadFile):
+    tmp = f"/tmp/{file.filename}"
+    with open(tmp, "wb") as f:
+        f.write(await file.read())
+
+    schema = json.load(open("json_schema.json", encoding="utf-8"))
+    prompt = open("prompt.txt", encoding="utf-8").read()
+    prompt = prompt.replace("{JSON_SCHEMA}", json.dumps(schema, ensure_ascii=False, indent=2))
+
+    result = extract_document(tmp, prompt)
+    return result
+
+@app.get("/")
+def home():
+    return {"message": "TechSpec IDP Server Ready!"}

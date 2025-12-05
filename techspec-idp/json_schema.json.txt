@@ -1,0 +1,77 @@
+{
+  "document_info": {
+    "file_name": "string",
+    "page_count": "number"
+  },
+  "style_info": {
+    "buyer": "string",
+    "season": "string",
+    "style_number": "string",
+    "style_name": "string",
+    "division": "string",
+    "gender": "string",
+    "category": "string",
+    "fit": "string",
+    "size_range": "string"
+  },
+  "fabric_info": {
+    "fabric_name": "string",
+    "fabric_content": "string",
+    "fabric_weight_gsm": "number",
+    "mill": "string",
+    "finish": "string",
+    "colorway": [
+      {
+        "color_name": "string",
+        "color_code": "string",
+        "pantone": "string"
+      }
+    ]
+  },
+  "measurement_chart": [
+    {
+      "section": "string",
+      "measurements": [
+        {
+          "point_of_measure": "string",
+          "size": "string",
+          "tolerance": "string",
+          "value": "string"
+        }
+      ]
+    }
+  ],
+  "construction": {
+    "sewing": "string",
+    "stitch_type": "string",
+    "topstitch": "string",
+    "seam_allowance": "string",
+    "lining": "string",
+    "interlining": "string"
+  },
+  "trims": [
+    {
+      "trim_type": "string",
+      "material": "string",
+      "supplier": "string",
+      "code": "string",
+      "color": "string",
+      "size": "string",
+      "usage": "string"
+    }
+  ],
+  "label_info": {
+    "care_label": "string",
+    "main_label": "string",
+    "placement": "string"
+  },
+  "packing_info": {
+    "fold_method": "string",
+    "polybag_size": "string",
+    "carton_size": "string",
+    "assortment": "string"
+  },
+  "comments": [
+    "string"
+  ]
+}
