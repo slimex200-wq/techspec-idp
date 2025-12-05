@@ -11,7 +11,7 @@ async def extract(file: UploadFile):
         f.write(await file.read())
 
     schema = json.load(open("json_schema.json", encoding="utf-8"))
-    prompt = open("prompt.txt", encoding="utf-8").read()
+    prompt = open("prompt", encoding="utf-8").read()
     prompt = prompt.replace("{JSON_SCHEMA}", json.dumps(schema, ensure_ascii=False, indent=2))
 
     result = extract_document(tmp, prompt)
@@ -20,3 +20,4 @@ async def extract(file: UploadFile):
 @app.get("/")
 def home():
     return {"message": "TechSpec IDP Server Ready!"}
+
